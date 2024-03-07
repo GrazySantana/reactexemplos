@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
+// Importação dos computadores necessários
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Header from "./Components/Header";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+
+// Componente funcional principal App
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+        <div className="App">
+            {/* Componente Router do React Router */}
+            <Router>
 
-export default App;
+                {/* Componente Header */}
+                <Header/>
+
+                    {/* Definição das rotas */}
+                    <Routes>
+
+                        {/* Rota para a página inicial */}
+                        <Route path="/" element={<Home />} />
+
+                        {/* Rota para a página "sobre" */}
+                        <Route path="/about" element={<About />} />
+
+                        {/* Rota para a página "sobre" */}
+                        <Route path="/about" element={<About />} />
+                    </Routes>
+                </Router>
+             </div>
+            );
+        }
+
+        // Exportação do componente App
+        export default App;
